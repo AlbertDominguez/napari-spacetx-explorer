@@ -17,7 +17,7 @@ def napari_experimental_provide_function():
 
 def read_spots(
         points: "napari.layers.Points",
-        genes: str = 'IGHG1',
+        genes: str = '',
         color_s: str = 'white',
         size_s: str = '10'
 ) -> "napari.types.LayerDataTuple":
@@ -67,8 +67,9 @@ def read_spots(
         # 'symbol': 'ring'},
         {'properties': spot_properties,
          'size': size_cycle,
-         'face_color': face_color},
-        'points'
+         'face_color': face_color,
+         'name': genes},
+         "points"
     )
 
     return layer_data
